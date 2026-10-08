@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Polymax, portfolio</title>
-<meta name="description" content="Polymax's portfolio : projects, assets and contacts.">
+<meta name="description" content="Polymax's portfolio: thumbnail examples, asset packs and contact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#EDF0F3; --ink:#152028; --muted:#556572; --line:#C6CED5;
-  --accent:#2B44D8; --hl:#F4D35E;
+  color-scheme:dark;
+  --bg:#0C1118; --surface:#141B24; --ink:#EAEEF2; --muted:#93A1AE; --line:#263240;
+  --accent:#8A9BFF; --fill:#2B44D8; --hl:#F4D35E;
   --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
   --text:"Literata",Georgia,"Times New Roman",serif;
 }
@@ -19,34 +20,43 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font:400 1.125rem/1.7 var(--text);-webkit-font-smoothing:antialiased}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+:focus-visible{outline:3px solid var(--hl);outline-offset:3px}
 .wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
 
 header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;padding-bottom:1.5rem;font:500 1rem var(--display)}
-header nav{display:flex;gap:1.5rem}
+header nav{display:flex;gap:1.5rem;flex-wrap:wrap}
 header a{text-decoration:none}
 header a:hover{text-decoration:underline;text-underline-offset:.3em}
 
 .hero{padding:4rem 0 5rem}
-h1{font:800 clamp(4rem,16vw,12rem)/.85 var(--display);letter-spacing:-.045em}
-h1 span{display:block}
-h1 span+span{color:var(--accent)}
+h1{font:800 clamp(4rem,19vw,14rem)/.85 var(--display);letter-spacing:-.045em}
 .hero p{max-width:34ch;margin-top:2.5rem;font-size:1.35rem;line-height:1.5}
-.hero mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit}
+.hero mark{background:linear-gradient(transparent 55%,rgba(244,211,94,.55) 55%);color:inherit}
+.cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-block;padding:.75rem 1.4rem;background:var(--fill);color:#fff;font:500 1rem var(--display);text-decoration:none;border:2px solid var(--fill);transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--hl);border-color:var(--hl);color:#152028}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--hl);background:transparent;color:var(--hl)}
 
 section{padding:4rem 0;border-top:1px solid var(--line)}
-h2{font:800 clamp(2rem,5vw,3rem)/1 var(--display);letter-spacing:-.03em;margin-bottom:2.5rem}
+h2{font:800 clamp(2rem,5vw,3rem)/1 var(--display);letter-spacing:-.03em;margin-bottom:.75rem}
+.lead{color:var(--muted);max-width:50ch;margin-bottom:2.5rem;font-size:1.05rem}
 
-.projects{list-style:none;padding:0}
-.projects li{border-top:1px solid var(--line)}
-.projects li:last-child{border-bottom:1px solid var(--line)}
-.projects a{display:grid;grid-template-columns:6.5rem 1fr auto;gap:1.5rem;align-items:center;padding:1.25rem .5rem;text-decoration:none;transition:background .2s}
-.projects a:hover{background:#fff}
-.projects a:hover h3{color:var(--accent)}
-.tile{width:6.5rem;aspect-ratio:1;display:grid;place-items:center;background:var(--c);color:#fff;font:800 2.5rem var(--display)}
-h3{font:800 1.6rem/1.15 var(--display);letter-spacing:-.02em;transition:color .2s}
-.projects p{color:var(--muted);font-size:1rem;line-height:1.5;margin-top:.25rem;max-width:46ch}
-.meta{text-align:right;font:500 .95rem/1.4 var(--display);color:var(--muted)}
+/* Thumbnails */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.thumb img,.ph{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.ph{display:grid;place-items:center;background:var(--c);color:rgba(255,255,255,.85);font:500 .95rem var(--display)}
+.thumb a{display:block;text-decoration:none}
+.thumb a:hover img,.thumb a:hover .ph{outline:3px solid var(--hl);outline-offset:3px}
+figcaption{margin-top:.6rem;font:500 .95rem/1.4 var(--display);color:var(--muted)}
+
+/* Packs */
+.packs{list-style:none;padding:0}
+.packs li{display:grid;grid-template-columns:1fr auto auto;gap:2rem;align-items:center;padding:1.5rem .5rem;border-top:1px solid var(--line)}
+.packs li:last-child{border-bottom:1px solid var(--line)}
+h3{font:800 1.6rem/1.15 var(--display);letter-spacing:-.02em}
+.packs p{color:var(--muted);font-size:1rem;line-height:1.5;margin-top:.25rem;max-width:46ch}
+.price{font:800 1.6rem var(--display);white-space:nowrap}
 
 .about{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem}
 .about p+p{margin-top:1rem}
@@ -55,14 +65,15 @@ h3{font:800 1.6rem/1.15 var(--display);letter-spacing:-.02em;transition:color .2
 .skills li:first-child{border-top:1px solid var(--line)}
 
 .contact a.mail{display:inline-block;font:800 clamp(1.6rem,6vw,3.5rem)/1.1 var(--display);letter-spacing:-.03em;color:var(--accent);text-underline-offset:.15em;word-break:break-word}
-.contact a.mail:hover{background:var(--hl);color:var(--ink)}
+.contact a.mail:hover{background:var(--hl);color:#152028}
 .links{display:flex;gap:1.5rem;margin-top:2rem;font:500 1rem var(--display)}
 footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
 
+@media (max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){
-  .projects a{grid-template-columns:4.5rem 1fr}
-  .tile{width:4.5rem;font-size:1.8rem}
-  .meta{grid-column:2;text-align:left}
+  .grid{grid-template-columns:1fr}
+  .packs li{grid-template-columns:1fr auto}
+  .packs .btn{grid-column:1/-1;text-align:center}
   .about{grid-template-columns:1fr;gap:2rem}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
@@ -72,60 +83,82 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
 <header>
   <div class="wrap">
     <a href="#top">Polymax</a>
-    <nav aria-label="Navigation principale">
-      <a href="#projets">Projects</a>
-      <a href="#apropos">About</a>
-      <a href="#contact">Contacts</a>
+    <nav aria-label="Main navigation">
+      <a href="#thumbnails">Thumbnails</a>
+      <a href="#packs">Asset packs</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
   <div class="wrap hero">
-    <h1><span>Votre</span><span>Nom</span></h1>
+    <h1>Polymax</h1>
     <p>In need of more <mark>freshness</mark> in your thumbnails? You've come to the right place.</p>
+    <div class="cta">
+      <a class="btn" href="#thumbnails">See my thumbnails</a>
+      <a class="btn ghost" href="#packs">Browse asset packs</a>
+    </div>
   </div>
 
-  <section id="projets">
+  <section id="thumbnails">
     <div class="wrap">
-      <h2>Projects</h2>
-      <ul class="projects">
-        <li><a href="#">
-          <div class="tile" style="--c:#2B44D8" aria-hidden="true">A</div>
-          <div><h3>Projet Alpha</h3><p>Une phrase pour dire ce que vous avez fait et pour qui.</p></div>
-          <div class="meta">2026<br>Site web</div>
-        </a></li>
-        <li><a href="#">
-          <div class="tile" style="--c:#1E7F6B" aria-hidden="true">B</div>
-          <div><h3>Projet Bravo</h3><p>Décrivez le problème de départ et le résultat obtenu.</p></div>
-          <div class="meta">2025<br>Identité visuelle</div>
-        </a></li>
-        <li><a href="#">
-          <div class="tile" style="--c:#C4472B" aria-hidden="true">C</div>
-          <div><h3>Projet Charlie</h3><p>Précisez votre rôle : conception, réalisation, gestion.</p></div>
-          <div class="meta">2025<br>Application</div>
-        </a></li>
-        <li><a href="#">
-          <div class="tile" style="--c:#152028" aria-hidden="true">D</div>
-          <div><h3>Projet Delta</h3><p>Ajoutez un lien vers le projet complet ou une étude de cas.</p></div>
-          <div class="meta">2024<br>Rédaction</div>
-        </a></li>
+      <h2>Thumbnails</h2>
+      <p class="lead">A selection of thumbnails I made. Click one to see more.</p>
+      <!-- TO ADD YOUR THUMBNAILS: put your images in a folder named "images", then replace
+           <div class="ph">...</div> in a block with:
+           <img src="images/my-thumbnail.jpg" alt="Short description of the thumbnail">
+           Change href="#" to a video or project link, or delete the <a> tag if you don't need a link. -->
+      <div class="grid">
+        <figure class="thumb"><a href="#"><div class="ph" style="--c:#2B44D8">Your thumbnail here</div></a><figcaption>Channel or video name</figcaption></figure>
+        <figure class="thumb"><a href="#"><div class="ph" style="--c:#1E7F6B">Your thumbnail here</div></a><figcaption>Channel or video name</figcaption></figure>
+        <figure class="thumb"><a href="#"><div class="ph" style="--c:#C4472B">Your thumbnail here</div></a><figcaption>Channel or video name</figcaption></figure>
+        <figure class="thumb"><a href="#"><div class="ph" style="--c:#6B3FA0">Your thumbnail here</div></a><figcaption>Channel or video name</figcaption></figure>
+        <figure class="thumb"><a href="#"><div class="ph" style="--c:#B8860B">Your thumbnail here</div></a><figcaption>Channel or video name</figcaption></figure>
+        <figure class="thumb"><a href="#"><div class="ph" style="--c:#2A6F97">Your thumbnail here</div></a><figcaption>Channel or video name</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="packs">
+    <div class="wrap">
+      <h2>Asset packs</h2>
+      <p class="lead">Ready-to-use assets for your thumbnail edits. Pick a pack and start creating.</p>
+      <!-- TO EDIT A PACK: change the name, the description, the price and the button link (href="#")
+           to your store page (Gumroad, Payhip, etc.). Copy a whole <li> block to add another pack. -->
+      <ul class="packs">
+        <li>
+          <div><h3>Logos pack</h3><p>Describe what's inside: number of files, formats, what it's good for.</p></div>
+          <div class="price">€XX</div>
+          <a class="btn" href="#">Get the pack</a>
+        </li>
+        <li>
+          <div><h3>Effects pack</h3><p>Glows, overlays, textures: list what the buyer gets.</p></div>
+          <div class="price">€XX</div>
+          <a class="btn" href="#">Get the pack</a>
+        </li>
+        <li>
+          <div><h3>Complete bundle</h3><p>Everything above in one download, at a lower price.</p></div>
+          <div class="price">€XX</div>
+          <a class="btn" href="#">Get the bundle</a>
+        </li>
       </ul>
     </div>
   </section>
 
-  <section id="apropos">
+  <section id="about">
     <div class="wrap about">
       <div>
-        <h2>À propos</h2>
-        <p>Présentez-vous en deux ou trois phrases : votre parcours, ce qui vous motive, la façon dont vous travaillez.</p>
-        <p>Ajoutez ce que vous recherchez : missions freelance, emploi, collaborations.</p>
+        <h2>About</h2>
+        <p>Introduce yourself in two or three sentences: what you do, how you work, what makes your thumbnails stand out.</p>
+        <p>Say how people can work with you: custom thumbnails, collaborations, packs.</p>
       </div>
-      <ul class="skills" aria-label="Compétences">
-        <li>Compétence principale</li>
-        <li>Deuxième compétence</li>
-        <li>Troisième compétence</li>
-        <li>Outils et logiciels</li>
+      <ul class="skills" aria-label="Skills">
+        <li>Thumbnail design</li>
+        <li>Logos and branding</li>
+        <li>Visual effects</li>
+        <li>Software you use</li>
       </ul>
     </div>
   </section>
@@ -133,11 +166,11 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
   <section id="contact" class="contact">
     <div class="wrap">
       <h2>Contact</h2>
-      <a class="mail" href="mailto:vous@exemple.fr">vous@exemple.fr</a>
+      <a class="mail" href="mailto:you@example.com">you@example.com</a>
       <div class="links">
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
         <a href="#">Instagram</a>
+        <a href="#">X</a>
+        <a href="#">YouTube</a>
       </div>
     </div>
   </section>
