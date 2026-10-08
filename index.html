@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polymax, portfolio</title>
+<meta name="description" content="Polymax's portfolio : projects, assets and contacts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF0F3; --ink:#152028; --muted:#556572; --line:#C6CED5;
+  --accent:#2B44D8; --hl:#F4D35E;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --text:"Literata",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.125rem/1.7 var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;padding-bottom:1.5rem;font:500 1rem var(--display)}
+header nav{display:flex;gap:1.5rem}
+header a{text-decoration:none}
+header a:hover{text-decoration:underline;text-underline-offset:.3em}
+
+.hero{padding:4rem 0 5rem}
+h1{font:800 clamp(4rem,16vw,12rem)/.85 var(--display);letter-spacing:-.045em}
+h1 span{display:block}
+h1 span+span{color:var(--accent)}
+.hero p{max-width:34ch;margin-top:2.5rem;font-size:1.35rem;line-height:1.5}
+.hero mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit}
+
+section{padding:4rem 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(2rem,5vw,3rem)/1 var(--display);letter-spacing:-.03em;margin-bottom:2.5rem}
+
+.projects{list-style:none;padding:0}
+.projects li{border-top:1px solid var(--line)}
+.projects li:last-child{border-bottom:1px solid var(--line)}
+.projects a{display:grid;grid-template-columns:6.5rem 1fr auto;gap:1.5rem;align-items:center;padding:1.25rem .5rem;text-decoration:none;transition:background .2s}
+.projects a:hover{background:#fff}
+.projects a:hover h3{color:var(--accent)}
+.tile{width:6.5rem;aspect-ratio:1;display:grid;place-items:center;background:var(--c);color:#fff;font:800 2.5rem var(--display)}
+h3{font:800 1.6rem/1.15 var(--display);letter-spacing:-.02em;transition:color .2s}
+.projects p{color:var(--muted);font-size:1rem;line-height:1.5;margin-top:.25rem;max-width:46ch}
+.meta{text-align:right;font:500 .95rem/1.4 var(--display);color:var(--muted)}
+
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem}
+.about p+p{margin-top:1rem}
+.skills{list-style:none;padding:0;font:500 1.05rem var(--display)}
+.skills li{padding:.6rem 0;border-bottom:1px solid var(--line)}
+.skills li:first-child{border-top:1px solid var(--line)}
+
+.contact a.mail{display:inline-block;font:800 clamp(1.6rem,6vw,3.5rem)/1.1 var(--display);letter-spacing:-.03em;color:var(--accent);text-underline-offset:.15em;word-break:break-word}
+.contact a.mail:hover{background:var(--hl);color:var(--ink)}
+.links{display:flex;gap:1.5rem;margin-top:2rem;font:500 1rem var(--display)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+
+@media (max-width:640px){
+  .projects a{grid-template-columns:4.5rem 1fr}
+  .tile{width:4.5rem;font-size:1.8rem}
+  .meta{grid-column:2;text-align:left}
+  .about{grid-template-columns:1fr;gap:2rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a href="#top">Polymax</a>
+    <nav aria-label="Navigation principale">
+      <a href="#projets">Projects</a>
+      <a href="#apropos">About</a>
+      <a href="#contact">Contacts</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1><span>Votre</span><span>Nom</span></h1>
+    <p>In need of more <mark>freshness</mark> in your thumbnails? You've come to the right place.</p>
+  </div>
+
+  <section id="projets">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <ul class="projects">
+        <li><a href="#">
+          <div class="tile" style="--c:#2B44D8" aria-hidden="true">A</div>
+          <div><h3>Projet Alpha</h3><p>Une phrase pour dire ce que vous avez fait et pour qui.</p></div>
+          <div class="meta">2026<br>Site web</div>
+        </a></li>
+        <li><a href="#">
+          <div class="tile" style="--c:#1E7F6B" aria-hidden="true">B</div>
+          <div><h3>Projet Bravo</h3><p>Décrivez le problème de départ et le résultat obtenu.</p></div>
+          <div class="meta">2025<br>Identité visuelle</div>
+        </a></li>
+        <li><a href="#">
+          <div class="tile" style="--c:#C4472B" aria-hidden="true">C</div>
+          <div><h3>Projet Charlie</h3><p>Précisez votre rôle : conception, réalisation, gestion.</p></div>
+          <div class="meta">2025<br>Application</div>
+        </a></li>
+        <li><a href="#">
+          <div class="tile" style="--c:#152028" aria-hidden="true">D</div>
+          <div><h3>Projet Delta</h3><p>Ajoutez un lien vers le projet complet ou une étude de cas.</p></div>
+          <div class="meta">2024<br>Rédaction</div>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="apropos">
+    <div class="wrap about">
+      <div>
+        <h2>À propos</h2>
+        <p>Présentez-vous en deux ou trois phrases : votre parcours, ce qui vous motive, la façon dont vous travaillez.</p>
+        <p>Ajoutez ce que vous recherchez : missions freelance, emploi, collaborations.</p>
+      </div>
+      <ul class="skills" aria-label="Compétences">
+        <li>Compétence principale</li>
+        <li>Deuxième compétence</li>
+        <li>Troisième compétence</li>
+        <li>Outils et logiciels</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <a class="mail" href="mailto:vous@exemple.fr">vous@exemple.fr</a>
+      <div class="links">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Polymax</div>
+</footer>
+</body>
+</html>
