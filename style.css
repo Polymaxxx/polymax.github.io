@@ -47,6 +47,8 @@ figcaption{margin-top:.6rem;font:500 .95rem/1.4 var(--display);color:var(--muted
 h3{font:800 1.6rem/1.15 var(--display);letter-spacing:-.02em}
 .packs p{color:var(--muted);font-size:1rem;line-height:1.5;margin-top:.25rem;max-width:46ch}
 .price{font:800 1.6rem var(--display);white-space:nowrap}
+.packs li.soon{display:block}
+.packs li.soon h3{color:var(--muted)}
 
 .about{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem}
 .about p+p{margin-top:1rem}
