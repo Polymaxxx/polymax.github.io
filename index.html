@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Polymax, portfolio</title>
 <meta name="description" content="Polymax's portfolio: thumbnail examples, asset packs and contact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,13 +36,13 @@
   <section id="thumbnails">
     <div class="wrap">
       <h2>Thumbnails</h2>
-      <p class="lead">A selection of thumbnails I made.</p>
+      <p class="lead">A selection of thumbnails I made. Tap one to see it full size.</p>
       <div class="grid">
-        <figure class="thumb"><img src="images/Polymax_portfolio_thumbnail.png" alt="Portfolio Thumbnail"></figure>
-        <figure class="thumb"><img src="images/polymax_vs_ai.png" alt="Polymax VS AI Thumbnail"></figure>
-        <figure class="thumb"><img src="images/Aitana_Bonmati_thumbnail.png" alt="Aitana Bonmati Thumbnail"></figure>
-        <figure class="thumb"><img src="images/before_after_thumbnail.png" alt="Before and After Thumbnail"></figure>
-        <figure class="thumb"><img src="images/nothing_else_comes_close.png" alt="Elden Ring Thumbnail"></figure>
+        <figure class="thumb"><button type="button" class="open" aria-label="View Portfolio Thumbnail full size"><img src="images/Polymax_portfolio_thumbnail.png" alt="Portfolio Thumbnail" loading="lazy" decoding="async"></button></figure>
+        <figure class="thumb"><button type="button" class="open" aria-label="View Polymax VS AI Thumbnail full size"><img src="images/polymax_vs_ai.png" alt="Polymax VS AI Thumbnail" loading="lazy" decoding="async"></button></figure>
+        <figure class="thumb"><button type="button" class="open" aria-label="View Aitana Bonmati Thumbnail full size"><img src="images/Aitana_Bonmati_thumbnail.png" alt="Aitana Bonmati Thumbnail" loading="lazy" decoding="async"></button></figure>
+        <figure class="thumb"><button type="button" class="open" aria-label="View Before and After Thumbnail full size"><img src="images/before_after_thumbnail.png" alt="Before and After Thumbnail" loading="lazy" decoding="async"></button></figure>
+        <figure class="thumb"><button type="button" class="open" aria-label="View Elden Ring Thumbnail full size"><img src="images/nothing_else_comes_close.png" alt="Elden Ring Thumbnail" loading="lazy" decoding="async"></button></figure>
         <figure class="thumb"><div class="ph more">More soon</div></figure>
       </div>
     </div>
@@ -74,12 +74,35 @@
         <p>Hi! I'm Max, a 17-year-old amateur graphic designer and editor specialized in logos, thumbnails and other designs.</p>
         <p>If you need help with thumbnail editing or if you're simply searching for assets for your next work, don't forget to check my different packs and contact me if needed.</p>
       </div>
-      <ul class="skills" aria-label="Skills">
-        <li>Thumbnail design</li>
-        <li>Logos and branding</li>
-        <li>Visual effects</li>
-        <li>Software I use</li>
-      </ul>
+      <!-- TO EDIT A SKILL: change the text inside <div class="body">. Copy a whole <details> block to add another one.
+           Add the "open" attribute to <details> if you want it to be open by default. -->
+      <div class="skills" aria-label="Skills">
+        <details>
+          <summary>Thumbnail design</summary>
+          <div class="body">
+            <p>Eye-catching thumbnails built to get clicks: strong composition, readable text, clean cut-outs and colors that stand out in the feed.</p>
+            <p>I adapt the style to your channel and your audience.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Logos and branding</summary>
+          <div class="body">
+            <p>Simple, memorable logos and matching visuals (banners, profile pictures, icons) so your channel or project has a consistent identity.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Visual effects</summary>
+          <div class="body">
+            <p>Glows, lighting, depth, blur and other effects that give your visuals more energy and make them pop.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Software I use</summary>
+          <div class="body">
+            <p>Photoshop, Illustrator, After Effects, Photopea.</p>
+          </div>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -99,6 +122,16 @@
 <footer>
   <div class="wrap">© <span id="year">2026</span> Polymax</div>
 </footer>
+
+<dialog id="lightbox" class="lightbox" aria-label="Thumbnail viewer">
+  <button type="button" class="lb-btn lb-close" aria-label="Close">×</button>
+  <div class="lb-stage"><img src="" alt=""></div>
+  <div class="lb-bar">
+    <button type="button" class="lb-btn lb-prev" aria-label="Previous thumbnail">‹</button>
+    <span class="lb-count" aria-live="polite"></span>
+    <button type="button" class="lb-btn lb-next" aria-label="Next thumbnail">›</button>
+  </div>
+</dialog>
 
 <script src="script.js" defer></script>
 </body>
