@@ -70,17 +70,15 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
 /* Thumbnails cliquables */
 .thumb .open{display:block;width:100%;padding:0;border:0;background:none;color:inherit;cursor:zoom-in;-webkit-tap-highlight-color:transparent}
 .thumb .open:hover img,.thumb .open:focus-visible img{outline:3px solid var(--hl);outline-offset:3px}
-.thumb img{background:var(--surface)}
 
-/* Compétences déroulantes */
-.skills{border-top:1px solid var(--line);font:500 1.05rem var(--display);align-self:start}
+/* Compétences déroulantes (design d'origine) */
+.skills{font:500 1.05rem var(--display)}
 .skills details{border-bottom:1px solid var(--line)}
-.skills summary{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:3.25rem;padding:.6rem 0;cursor:pointer;list-style:none;-webkit-tap-highlight-color:transparent}
+.skills details:first-child{border-top:1px solid var(--line)}
+.skills summary{padding:.6rem 0;cursor:pointer;list-style:none;-webkit-tap-highlight-color:transparent}
 .skills summary::-webkit-details-marker{display:none}
-.skills summary::after{content:"+";flex:none;font-size:1.6rem;line-height:1;color:var(--accent);transition:transform .2s}
-.skills details[open] summary::after{transform:rotate(45deg)}
 .skills summary:hover{color:var(--hl)}
-.skills .body{padding:0 0 1.2rem;font:400 1rem/1.6 var(--text);color:var(--muted)}
+.skills .body{padding:0 0 .9rem;font:400 1rem/1.6 var(--text);color:var(--muted)}
 .skills .body p+p{margin-top:.6rem}
 .skills details[open] .body{animation:reveal .25s ease}
 @keyframes reveal{from{opacity:0;transform:translateY(-.4rem)}}
